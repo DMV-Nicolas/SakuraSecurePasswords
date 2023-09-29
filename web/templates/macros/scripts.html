@@ -1,0 +1,11 @@
+{% macro scripts() %}
+<!--Jquery 3.2.1-->
+<script src="{{url_for('static', filename='js/jquery-3.2.1.js')}}"></script>
+<!--Bootstrap 5.0.0-->
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<!--Less 3.13-->
+<script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
+<!--Ghost/Alerts-->
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+<!---->
+{%endmacro%}

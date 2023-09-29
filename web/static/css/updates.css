@@ -1,0 +1,32 @@
+.updateContent {
+    width: 80%;
+    margin: 3em 0;
+    margin: auto;
+}
+
+.updatesList li {
+    margin: 0.5em 0;
+}
+
+.updatesList li a {
+    opacity: 85%;
+    color: #dc3545;
+    transition: all linear 0.18s;
+    margin: 0 0.3em
+}
+
+.updatesList li a:hover {
+    opacity: 95%;
+    color: #d30000;
+}
+
+.updatesList li p {
+    display: inline;
+    opacity: 100%;
+    color: #cccccc;
+}
+
+.updatesImg {
+    padding: 1.6em 0;
+    margin: auto;
+}

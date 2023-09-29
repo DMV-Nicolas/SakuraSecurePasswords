@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font Comic Neue-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap" rel="stylesheet">
+    <!--favicon.ico-->
+    <link rel="icon" href="{{url_for('static', filename='img/favicon.ico')}}" type="image/png" />
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/a1c45a8756.js" crossorigin="anonymous"></script>
+    <!--Styles css/lass-->
+    {%from "macros/styles.html" import styles%} {{styles()}}
+    <title>Sakura</title>
+</head>
+
+<body>
+    <!--Ghost loading-->
+    {%from "macros/ghost.html" import ghost%} {{ghost()}}
+    <!--Navs-->
+    <div class="relleno"></div>
+    {%if not g.user%} {%from "macros/nav1.html" import nav1%} {{nav1()}}{%endif%}
+    <!--Content-->
+    {%for x in range(5)%}
+    <div class="divisor"></div>
+    {%endfor%} {%block content%}{%endblock%}
+    <!--Alerts-->
+    {%from "macros/alerts.html" import alerts%} {{alerts()}}
+    <!--Footer-->
+    {%from "macros/footer.html" import footer%} {{footer()}}
+    <!--Scripts-->
+    {%from "macros/scripts.html" import scripts%} {{scripts()}}
+</body>
+
+</html>

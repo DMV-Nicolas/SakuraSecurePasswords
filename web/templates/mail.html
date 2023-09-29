@@ -1,0 +1,9 @@
+{%if g.user%}
+<h1> El usuario registrado: {{data.username}} te ha enviado un mensaje</h1>
+{%else%}
+<h1> El usuario no registrado: {{data.username}} te ha enviado un mensaje</h1>
+{%endif%}
+<h5>Asunto: {{data.title}}</h5>
+<p> Remitente: {{data.email}}</p>
+<br>
+<p>{{data.message}}</p>

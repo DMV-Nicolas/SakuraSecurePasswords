@@ -1,0 +1,43 @@
+{%extends "layaut.html"%} {%block content%}
+<!--Navbar for registered users-->
+<!--Horizontal nav-->
+{%from "macros/nav2.html" import nav2%} {{nav2(accounts)}}
+<!--Vertical nav-->
+{%from "macros/vertical.html" import vertical%} {{vertical(account)}}
+<div class="page-content p-5" id="content">
+    <div class="sakura-account">
+        <div class="row g-3">
+            <div class="mb-3">
+            </div>
+            <div class="col-12">
+                <h5 class="text-light text-center bg-dark" id="title-form">{{account.name}}</h5>
+            </div>
+            <label for="accountUrl" class="form-label text-light">Url del sitio:</label>
+            <div class="input-group mb-3 shadow">
+                <input type="text" class="form-control bg-dark text-light" id="accountUrl" placeholder="Username@example.com" value="{{account.url}}" name="loginEmail" readonly>
+                <a href="{{account.url}}" class="btn btn-danger" target="_blank">Ir al sitio</a>
+            </div>
+            <label for="element_1" class="text-light form-label">Nombre de usuario</label>
+            <div class="input-group mb-3 shadow">
+                <input type="text" class="form-control bg-dark spoiler" value="{{account.username}}" readonly>
+                <p class="none" id="accountUsername">{{account.username}}</p>
+                <button class="btn btn-danger" type="button" value="accountUsername" onclick="copy(this);">Copiar</button>
+            </div>
+            <label for="element_2" class="text-light form-label">Contraseña</label>
+            <div class="input-group mb-3 shadow">
+                <input type="text" class="form-control bg-dark spoiler" value="{{password}}" readonly>
+                <p class="none" id="accountPassword">{{password}}</p>
+                <button class="btn btn-danger" type="button" value="accountPassword" onclick="copy(this);">Copiar</button>
+            </div>
+            <div class="mb-3">
+            </div>
+        </div>
+    </div>
+
+    <a href="{{url_for('admin')}}"><i class="fas fa-angle-left back"></i></a>
+</div>
+<script src="{{url_for('static', filename='js/clipboard.js')}}"></script>
+<!--Windows-->
+{%from "macros/windows.html" import windows%} {{windows(account,password,[],False)}}
+<!--endWindows-->
+{%endblock%}

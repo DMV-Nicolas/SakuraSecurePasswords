@@ -1,0 +1,31 @@
+{%extends "layaut.html"%}{%block content%} {%if g.user%}
+<!--Navbar for registered users-->
+<!--Horizontal nav-->
+{%from "macros/nav2.html" import nav2%} {{nav2([])}}
+<!--Vertical nav-->
+{%from "macros/vertical.html" import vertical%} {{vertical([])}}
+<div class="page-content p-5" id="content">
+    <div class="sakura-account">
+        <h1 class="text-center text-danger">404 pagina no encontrada</h1>
+        <p class="text-light">
+            La pagina a la que intentaste acceder no existe. ¡Regresa y sigue administrando tu vida! --> <a href="{{url_for('admin')}}" class="text-danger">¡Regresar!</a>
+        </p>
+        <p class="text-light">
+            Si estas totalmente seguro de que no es un error, porfavor comunicarnos a <a href="{{url_for('contact')}}" class="text-danger">Contacto</a>.
+        </p>
+    </div>
+</div>
+{%else%}
+<div class="divisor"></div>
+
+<div class="sakura-account">
+    <div class="divisor"></div>
+    <h1 class="text-center text-danger">404 pagina no encontrada</h1>
+    <p class="text-light">
+        La pagina a la que intentaste acceder no existe. ¡Registrate ahora y desde hoy administra tu vida! --> <a href="{{url_for('signup')}}" class="text-danger">¡Registrarme!</a>
+    </p>
+    <p class="text-light">
+        Si estas totalmente seguro de que no es un error, porfavor comunicarnos en la seccion de <a href="#slide" class="text-danger">Contacto</a>.
+    </p>
+</div>
+{%endif%} {%endblock%}

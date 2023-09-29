@@ -1,0 +1,42 @@
+{% macro nav2(accounts) %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark divisor2" id="sidebar">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="{{url_for('admin')}}">Sakura SP</a>
+            <div class="accountColumns">
+                <a href="{{url_for('columns', columns='1')}}">1</a>
+                <a href="{{url_for('columns', columns='2')}}">2</a>
+                <a href="{{url_for('columns', columns='4')}}">4</a>
+                <a href="{{url_for('columns', columns='8')}}">8</a>
+            </div>
+            <div class="collapse navbar-collapse end">
+                <ul class="navbar-nav">
+                    <form action="{{url_for('search')}}" class="d-flex" method="GET">
+                        <div class="inputSearch">
+                            <input class="form-control bg-dark text-light" list="datalistOptions" id="bor" placeholder="Buscar cuenta" name="searchAccount">
+                            <datalist id="datalistOptions">
+                                {%for account in accounts%}
+                                <option>{{account.name}}</option>
+                                {%endfor%}
+                            </datalist>
+                            <button class="btn btn-outline-light" type="submit">Buscar</button>
+                        </div>
+                    </form>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle end-item" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="far fa-user"></i> Cuenta
+                        </a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                            <li><a href="#" class="dropdown-item text-light">Detalles</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a href="{{url_for('logout')}}" class="dropdown-item text-light">Salir</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+{%endmacro%}

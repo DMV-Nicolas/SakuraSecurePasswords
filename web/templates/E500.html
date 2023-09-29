@@ -1,0 +1,31 @@
+{%extends "layaut.html"%}{%block content%} {%if g.user%}
+<!--Navbar for registered users-->
+<!--Horizontal nav-->
+{%from "macros/nav2.html" import nav2%} {{nav2([])}}
+<!--Vertical nav-->
+{%from "macros/vertical.html" import vertical%} {{vertical([])}}
+<div class="page-content p-5" id="content">
+    <div class="sakura-account">
+        <h1 class="text-center text-danger">500 Error del servidor</h1>
+        <p class="text-light">
+            Intenta recargar la pagina o redirigete a <a href="{{url_for('admin')}}" class="text-danger">Admin</a>
+        </p>
+        <p class="text-light">
+            Si esto no funciona porfavor comunicar error en <a href="{{url_for('contact')}}" class="text-danger">Contacto</a>.
+        </p>
+    </div>
+</div>
+{%else%}
+<div class="divisor"></div>
+
+<div class="sakura-account">
+    <div class="divisor"></div>
+    <h1 class="text-center text-danger">502 Error del servidor</h1>
+    <p class="text-light">
+        Intenta recargar la pagina o redirigete a <a href="{{url_for('signup')}}" class="text-danger">Inicio</a>
+    </p>
+    <p class="text-light">
+        Si esto no funciona porfavor comunicar error en la seccion de <a href="#slide" class="text-danger">Contacto</a>.
+    </p>
+</div>
+{%endif%} {%endblock%}

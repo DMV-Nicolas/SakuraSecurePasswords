@@ -1,0 +1,58 @@
+/*banner*/
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f1f1f1;
+    font-size: 27px;
+}
+
+.banner h1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.banner h1 div {
+    color: #ff1010;
+    font-size: 1em;
+}
+
+.banner h1 p {
+    padding: 0 0.5em;
+    font-size: 1em;
+}
+
+
+/*columns*/
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 99%;
+    font-size: 19px;
+}
+
+.columns div {
+    margin: 0 1.5em;
+    transition: all linear 0.15s;
+    border-radius: 0.5em;
+    opacity: 90%;
+}
+
+.columns div:hover {
+    -webkit-transform: scale(0.1);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
+    transition: all linear 0.15s;
+    opacity: 100%;
+}
+
+.card-title {
+    font-size: 1.5em;
+    padding: 0.8em 0;
+}
+
+.card-text {
+    font-size: 1em;
+}

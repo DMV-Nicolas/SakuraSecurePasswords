@@ -1,0 +1,11 @@
+{% macro alerts()%} {%with messages=get_flashed_messages(with_categories=True)%} {%if messages%}
+<ul class="list-unstyled">
+    {%for category, message in messages%}
+    <li class="alert" style="padding:0;margin:0;">
+        <div class="{{category}}" role="alert">
+            <p>{{message}}</p>
+        </div>
+    </li>
+    {%endfor%}
+</ul>
+{%endif%} {%endwith%} {%endmacro%}

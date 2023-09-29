@@ -1,0 +1,105 @@
+{%macro windows(account,password,temporalAccount,add_button)%}
+<!--Popup1-->
+<div>
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+            <div class="col-12">
+                <h4 class="text-light text-center bg-dark" id="title-form">Editar {{account.name}}</h4>
+            </div>
+            <form action="{{url_for('edit',name=account.name)}}" method="POST">
+                <div class="contenedor-inputs row g-3">
+                    <div class="mb-3">
+                    </div>
+                    <div class="col-md-6 shadow">
+                        <label for="editName" class="form-label text-light">Nombre</label>
+                        <input type="text" class="form-control bg-dark text-light" id="editName" placeholder="Name" value="{{account.name}}" name="editName">
+                    </div>
+                    <div class="col-md-6 shadow">
+                        <label for="editUsername" class="form-label text-light">Nombre de usuario</label>
+                        <input type="text" class="form-control bg-dark text-light" id="editUsername" placeholder="Username" value="{{account.username}}" name="editUsername">
+                    </div>
+                    <div class="col-12 shadow">
+                        <label for="editPassword" class="form-label text-light">Contraseña</label>
+                        <input type="password" class="form-control bg-dark text-light" id="editPassword" placeholder="************" value="{{password}}" name="editPassword">
+                    </div>
+                    <div class="col-12 shadow">
+                        <label for="editUrl" class="form-label text-light">Url</label>
+                        <input type="text" class="form-control bg-dark text-light" id="editUrl" placeholder="https://example.com" value="{{account.url}}" name="editUrl">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-danger" type="submit" onclick="view()">Editar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Popup2-->
+<div>
+    <div class="overlay" id="overlay2">
+        <div class="popup" id="popup2">
+            <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+            <h3 class="text-light">Eliminar {{account.name}}?</h3>
+            <h4 class="text-light">Cualquier cuenta borrada no podra recuperarse</h4>
+            <div class="d-grid gap-2 col-6 mx-auto"><a href="{{url_for('delete', name=account.name)}}" class="btn btn-danger" onclick="view()">Eliminar</a></div>
+        </div>
+    </div>
+</div>
+
+<!--Popup3-->
+<div>
+    <div class="overlay" id="overlay3">
+        <div class="popup" id="popup3">
+            <a href="#" id="btn-cerrar-popup3" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+            <div class="col-12">
+                <h4 class="text-light text-center bg-dark" id="title-form">Añadir</h4>
+            </div>
+            <form action="{{url_for('add')}}" method="POST">
+                <div class="contenedor-inputs row g-3">
+                    <div class="mb-3">
+                    </div>
+                    <div class="col-md-6 shadow">
+                        <label for="addName" class="form-label text-light">Nombre</label>
+                        <input type="text" class="form-control bg-dark text-light" id="addName" placeholder="Name" name="addName" value="{{temporalAccount.name}}">
+                    </div>
+                    <div class="col-md-6 shadow">
+                        <label for="addUsername" class="form-label text-light">Nombre de usuario</label>
+                        <input type="text" class="form-control bg-dark text-light" id="addUsername" placeholder="Username" name="addUsername" value="{{temporalAccount.username}}">
+                    </div>
+                    <div class="col-12 shadow">
+                        <label for="addPassword" class="form-label text-light">Contraseña</label>
+                        <input type="password" class="form-control bg-dark text-light" id="addPassword" placeholder="************" name="addPassword" value="{{temporalAccount.password}}">
+                    </div>
+                    <div class="col-12 shadow">
+                        <label for="addUrl" class="form-label text-light">Url</label>
+                        <input type="text" class="form-control bg-dark text-light" id="addUrl" placeholder="https://example.com" name="addUrl" value="{{temporalAccount.url}}">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-danger" type="submit" onclick="view()">Añadir</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Popup4-->
+<div>
+    <div class="overlay" id="overlay4">
+        <div class="popup" id="popup4">
+            <a href="#" id="btn-cerrar-popup4" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+            <h3 class="text-light">¿Descargar {{account.name}}?</h3>
+            <h4 class="text-light">Las cuentas descargadas son almacenadas en un archivo extension ".txt" en el dispositivo</h4>
+
+            <div class="d-grid gap-2 col-6 mx-auto"><a href="{{url_for('static', filename='Accounts/Selected_Account.txt')}}" download="SSP{{account.name}}Cuenta" class="btn btn-danger">Descargar</a></div>
+        </div>
+    </div>
+</div>
+{%if add_button%}
+<script src="{{url_for('static', filename='js/windows/window3.js')}}"></script>
+{%endif%} {%if account%}
+<script src="{{url_for('static', filename='js/windows/window1.js')}}"></script>
+<script src="{{url_for('static', filename='js/windows/window2.js')}}"></script>
+<script src="{{url_for('static', filename='js/windows/window4.js')}}"></script>
+{%endif%} {%endmacro%}

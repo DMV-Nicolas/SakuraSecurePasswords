@@ -1,0 +1,82 @@
+{% macro footer(password) %}{%for x in range(14)%}
+<div class="divisor"></div>
+{%endfor%} {%if g.user%}
+<div class="divisor2">
+    <footer class="bg-dark">
+        <div class="footer__section1 bg-dark">
+            <ul>
+                <li class="text-light">
+                    <a href="#contact" class="text-danger"><i class="fas fa-envelope"></i> sakura.securepass@gmail.com</a>
+                </li>
+                <li class="text-light">
+                    <a href="https://www.facebook.com/Sakura-Secure-Passwords-106138428130103" class="text-danger" target="_blank"><i class="fab fa-facebook-square"></i> Sakura Secure Passwords</a>
+                </li class="text-light">
+                <li class="text-light">
+                    <a href="https://twitter.com/SakuraSecure" class="text-danger" target="_blank"><i class="fab fa-twitter"></i> @SakuraSecure</a>
+                </li class="text-light">
+                <li class="text-light">
+                    <a href="https://www.instagram.com/sakurasecurepass/" class="text-danger" target="_blank"><i class="fab fa-instagram"></i> SakuraSecurePass</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p class="text-light text-center">
+                Todos los derechos reservados a Sakura Secure Passwords
+            </p>
+        </div>
+    </footer>
+</div>
+{%else%}
+<footer>
+    <div>
+        <div class="footer__section1" id="slide">
+            <ul>
+                <li class="text-light">
+                    <a href="#contact" class="text-danger"><i class="fas fa-envelope"></i> sakura.securepass@gmail.com</a>
+                </li>
+                <li class="text-light">
+                    <a href="https://www.facebook.com/Sakura-Secure-Passwords-106138428130103" class="text-danger" target="_blank"><i class="fab fa-facebook-square"></i> Sakura Secure Passwords</a>
+                </li class="text-light">
+                <li class="text-light">
+                    <a href="https://twitter.com/SakuraSecure" class="text-danger" target="_blank"><i class="fab fa-twitter"></i> @SakuraSecure</a>
+                </li class="text-light">
+                <li class="text-light">
+                    <a href="https://www.instagram.com/sakurasecurepass/" class="text-danger" target="_blank"><i class="fab fa-instagram"></i> SakuraSecurePass</a>
+                </li>
+            </ul>
+        </div>
+        <div class="divisor"></div>
+        <div class="footer__section2" id="contact">
+            <div>
+                <h5 class="text-light text-center bg-dark" id="title-form">Contacto</h5>
+                <form class="row g-3" action="{{url_for('contact')}}" method="POST">
+                    <div class="col-md-6">
+                        <label for="contactName" class="form-label text-light">Nombre</label>
+                        <input type="text" class="form-control bg-dark text-light" id="contactName" placeholder="name" name="contactUsername">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contactEmail" class="form-label text-light">Correo</label>
+                        <input type="text" class="form-control bg-dark text-light" placeholder="name@example.com" id="contactEmail" name="contactEmail">
+                    </div>
+                    <div class="col-12">
+                        <label for="contactTitle" class="form-label text-light">Asunto</label>
+                        <input type="text" class="form-control bg-dark text-light" id="contactTitle" placeholder="title" name="contactTitle">
+                    </div>
+                    <div class="col-12">
+                        <label for="contactMessage" class="form-label text-light">Mensaje</label>
+                        <textarea type="text" class="form-control bg-dark text-light" id="contactMessage" placeholder="message" name="contactMessage" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-danger" type="submit" onclick="view()">Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p class="text-light text-center">
+            Todos los derechos reservados a Sakura Secure Passwords
+        </p>
+    </div>
+</footer>
+{%endif%} {%endmacro%}

@@ -1,0 +1,82 @@
+#title-form {
+    padding: 0.5em;
+    border-radius: 0.18em;
+}
+
+#bor {
+    border: 1px solid #dfdfdf !important;
+}
+
+.form-control {
+    border: none;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.form-check-input {
+    border: none;
+}
+
+.form-check-input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.inputSearch {
+    display: flex;
+    margin: 0 2em;
+    width: 100%;
+}
+
+.inputSearch input {
+    margin: 0 0.5em;
+    width: 100%;
+}
+
+.sakura-form {
+    width: 60%;
+    border-radius: 1em;
+    background-color: #191919;
+    margin: auto;
+}
+
+.sakura-form form {
+    margin: 1em;
+}
+
+.shadow {
+    box-shadow: none !important;
+    background: none !important;
+    border: none !important;
+}
+
+.shadow input:focus {
+    box-shadow: 0 0 0.3em #ffffff !important;
+}
+
+.link {
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+}
+
+.link:focus {
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+}
+
+.border {
+    border: none !important;
+    outline: none !important;
+}
+
+.signupRequeriments p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    color: #616161
+}

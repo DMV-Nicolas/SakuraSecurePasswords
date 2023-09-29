@@ -1,0 +1,60 @@
+{%extends "layaut.html"%} {%block content%} {%if g.user%}
+<!--Navbar for registered users-->
+<!--Horizontal nav-->
+{%from "macros/nav2.html" import nav2%} {{nav2([])}}
+<!--Vertical nav-->
+{%from "macros/vertical.html" import vertical%} {{vertical([])}} {%endif%}
+<div {%if g.user%} class="page-content p-5" id="content" {%endif%}>
+    <div class="sakura-form">
+        <form class="row g-3" action="{{url_for('generate')}}" method="GET">
+            <div class="mb-3">
+            </div>
+            <div class="col-12">
+                <h5 class="text-light text-center bg-dark" id="title-form">Generador de contraseñas</h5>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control bg-dark text-light" placeholder="generate" value="{{password}}">
+                <p class="none" id="generatePassword">{{password}}</p>
+                <button class="btn btn-danger" id="copy_generatePassword" type="button" onclick="copy(this)">Copiar</button>
+            </div>
+            <div class="col-12">
+                <label for="generateSize" class="form-label text-light">Tamaño de contraseña (0,100)</label>
+                <input type="range" class="form-range" min="0" max="100" id="generateSize" name="generateSize">
+            </div>
+            <div>
+                <div class="form-check form-check-inline shadow">
+                    <input class="form-check-input bg-dark text-light" type="checkbox" id="inlineCheckbox1" value="true" name="generateLetters" checked>
+                    <label class="form-check-label text-light" for="inlineCheckbox1">Letras</label>
+                </div>
+                <div class="form-check form-check-inline shadow">
+                    <input class="form-check-input bg-dark text-light" type="checkbox" id="inlineCheckbox2" value="true" name="generateNumbers" checked>
+                    <label class="form-check-label text-light" for="inlineCheckbox2">Numeros</label>
+                </div>
+                <div class="form-check form-check-inline shadow">
+                    <input class="form-check-input bg-dark text-light" type="checkbox" id="inlineCheckbox2" value="true" name="generateSymbols">
+                    <label class="form-check-label text-light" for="inlineCheckbox2">Simbolos</label>
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-danger" type="submit" onclick="view()">Generar</button>
+            </div>
+            <div class="mb-3">
+            </div>
+        </form>
+        {{size}}
+    </div>
+    <script>
+        var button = document.getElementById("copy_generatePassword");
+        button.addEventListener("click", CopyToClipboard, false);
+
+        function CopyToClipboard() {
+            var element = document.getElementById("generatePassword");
+            var input_false = document.createElement("input");
+            input_false.setAttribute("value", element.innerHTML);
+            document.body.appendChild(input_false);
+            input_false.select();
+            document.execCommand("copy");
+            document.body.removeChild(input_false);
+        }
+    </script>
+</div> {%endblock%}

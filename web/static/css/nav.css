@@ -1,0 +1,90 @@
+.end {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.end-item {
+    opacity: 75% !important;
+}
+
+.end-item:hover {
+    opacity: 95% !important;
+    color: #d30000 !important;
+    transition: all linear 0.25s !important;
+}
+
+.hob {
+    color: #f0f0f0;
+    transition: all linear 0.2s;
+}
+
+.hob:hover {
+    background-color: #2f3236;
+    color: #ffffff;
+    transition: all linear 0.2s;
+}
+
+.hob:active {
+    background-color: #ff1010;
+    transition: all linear 0.2s;
+}
+
+#sidebar {
+    position: fixed;
+    font-size: 18px;
+    z-index: 10;
+    top: 0.45em;
+    right: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar2 {
+    position: fixed;
+    height: 100%;
+    width: 20%;
+    z-index: 10;
+    top: 0.5em;
+    left: 0;
+}
+
+.dropdown-item:hover {
+    transition: all linear 0.1s;
+    background-color: #2f3236;
+}
+
+.dropdown-item:active {
+    transition: all linear 0.1s;
+    background-color: #ff1010;
+}
+
+.vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+}
+
+.page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+}
+
+.accountColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 25px;
+}
+
+.media-body {
+    padding-left: 0.4em;
+}
+
+.divisor2 {
+    margin-left: 17rem;
+}

@@ -1,0 +1,200 @@
+/*Accounts*/
+
+#accountsCards1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    align-items: center;
+}
+
+#accountsCards1 .account {
+    font-size: 30px;
+    height: 6em;
+    margin: 2% 0;
+}
+
+#accountsCards2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    align-items: center;
+}
+
+#accountsCards2 .account {
+    font-size: 25px;
+    height: 6em;
+    margin: 2% 0;
+}
+
+#accountsCards4 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: auto;
+    align-items: center;
+}
+
+#accountsCards4 .account {
+    font-size: 20px;
+    height: 6em;
+    margin: 2% 0;
+}
+
+#accountsCards8 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: auto;
+    align-items: center;
+}
+
+#accountsCards8 .account {
+    font-size: 13px;
+    height: 6.5em;
+    margin: 2% 0;
+}
+
+.account {
+    border: 1px solid #dfdfdf;
+    position: relative;
+    width: 96%;
+    height: 100%;
+    margin: auto;
+}
+
+.accountBody {
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
+}
+
+.accountVisible {
+    position: absolute;
+    margin: 0.5em 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.accountVisible h5 {
+    padding: 0 0;
+    font-size: 1em;
+}
+
+.accountVisible p {
+    font-size: 0.8em;
+}
+
+.accountBodyHeader {
+    background-color: #2b2f33;
+    width: 100%;
+}
+
+.accountNoVisible {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0%;
+    transition: all linear 0.18s;
+    width: 100%;
+    height: 100%;
+}
+
+.accountNoVisible:hover {
+    opacity: 95%;
+    transition: all linear 0.18s;
+}
+
+.accountVisible:hover {
+    opacity: 8%;
+    transition: all linear 0.18s;
+}
+
+.accountButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.Copybuttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 65%;
+}
+
+.dinamicButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+.copyButton {
+    width: 95%;
+    margin: auto;
+    font-size: 0.6em;
+}
+
+.Selectbutton {
+    text-align: end;
+    margin: 0.4em 0.4em;
+    font-size: 0.5em;
+}
+
+.Httpbutton {
+    text-align: start;
+    margin: 0.4em 0.4em;
+    font-size: 0.6em;
+    color: #ffffff;
+}
+
+.Httpbutton:hover {
+    color: #dc3545;
+    transition: all linear 0.18s;
+}
+
+.Detailbutton {
+    text-align: center;
+    margin: 0.4em 0.4em;
+    font-size: 0.6em;
+}
+
+.Detailbutton {
+    color: #ffffff;
+}
+
+.Detailbutton:hover {
+    color: #dc3545;
+    transition: all linear 0.18s;
+}
+
+#addButton {
+    display: inline-block;
+    position: fixed;
+    z-index: 1000;
+    bottom: 2em;
+    right: 2em;
+}
+
+#addButton a i {
+    font-size: 1.9em;
+    transition: all linear 0.1s;
+}
+
+#addButton a i:hover {
+    font-size: 2em;
+    transition: all linear 0.1s;
+}

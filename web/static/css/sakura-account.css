@@ -1,0 +1,38 @@
+.sakura-account {
+    width: 85%;
+    border-radius: 0.5em;
+    background-color: #191919;
+    margin: auto;
+    font-size: 30px;
+    padding: 2em;
+}
+.sakura-account div{
+    align-items: center;
+    margin: auto;
+}
+.sakura-account .card-header{
+    font-size: 2em;
+}
+.sakura-account .card-body{
+    font-size: 1em;
+}
+.sakura-account .card-body div{
+    display:flex;
+    flex-direction: column;
+    text-align: start;
+}
+.sakura-account .card-footer{
+    font-size: 0.8em;
+}
+.back{
+    position: fixed;
+    color:#dc3545;
+    z-index: 1000;
+    font-size:2em;
+    top: 13%;
+    left:23%;
+}
+.back:hover{
+    color:#ffffff;
+    transition: all linear 0.18s;
+}

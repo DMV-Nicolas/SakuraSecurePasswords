@@ -1,0 +1,50 @@
+{%extends "layaut.html"%} {%block content%}
+<!--Navbar for registered users-->
+<!--Horizontal nav-->
+{%from "macros/nav2.html" import nav2%} {{nav2(accounts)}}
+<!--Vertical nav-->
+{%from "macros/vertical.html" import vertical%} {{vertical(account)}}
+<div class="page-content p-5" id="content">
+    <!--All Accounts-->
+    <div id="{%if columns == 1%}accountsCards1{%elif columns == 2%}accountsCards2{%elif columns == 4%}accountsCards4{%elif columns == 8%}accountsCards8{%else%}accountsCards4{%endif%}">
+        {%for account in accounts%}
+        <div class="account bg-dark">
+            <div class="accountBody">
+                <div class="accountVisible">
+                    <h5 class="text-break text-light text-center accountBodyHeader">{{account.name}}</h5>
+                    <p class="text-break text-light text-center">{{account.username}}</p>
+                </div>
+                <div class="accountNoVisible bg-dark">
+                    <div class="accountButtons">
+                        <div class="dinamicButtons">
+                            <a href="{{account.url}}" target="_blank" class="Httpbutton">https://</a>
+                            <a href="{{url_for('account', name=account.name)}}" class="Detailbutton"><i class="fas fa-eye"></i></a>
+                            <form action="{{url_for('admin')}}" method="GET">
+                                <button class="btn btn-sm btn-outline-light Selectbutton" type="submit" value="{{account.name}}" name="name">Select</button>
+                            </form>
+                        </div>
+                        <div class="Copybuttons">
+                            <p class="none" id="username_{{account.id}}">{{account.username}}</p>
+                            <button class="btn btn-danger copyButton" value="username_{{account.id}}" onclick="copy(this)">Copiar usuario</button>
+                            <p class="none" id="password_{{account.id}}">{{passwords[loop.index-1]}}</p>
+                            <button class="btn btn-danger copyButton" value="password_{{account.id}}" onclick="copy(this)">Copiar contraseña</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    <div>
+        <button onclick="arroz()">O</button>
+    </div>
+    <div class="media d-flex align-items-center" id="addButton">
+        <a href="#" class="btn-abrir-popup" id="btn-abrir-popup3"><i class="fas fa-plus-circle mr-3 rounded-circle img-thumbnail shadow-sm bg-danger text-dark"></i></a>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/bg-mode.js')}}"></script>
+<script src="{{url_for('static', filename='js/clipboard.js')}}"></script>
+<!--Windows-->
+{%from "macros/windows.html" import windows%} {{windows(account,password,temporalAccount,True)}}
+<!--endWindows-->
+{%endblock%}

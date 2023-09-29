@@ -1,0 +1,79 @@
+{%extends "layaut.html"%} {%block content%} {%if g.user%}
+<!--Navbar for registered users-->
+<!--Horizontal nav-->
+{%from "macros/nav2.html" import nav2%} {{nav2([])}}
+<!--Vertical nav-->
+{%from "macros/vertical.html" import vertical%} {{vertical([])}} {%endif%}
+<div {%if g.user%} class="page-content p-5" id="content" {%else%} class="updateContent" {%endif%}>
+    <div class="card bg-dark">
+        <div class="card-header">
+            <h2 class="text-light fs-1">Enero 2021 (version 1.0 Beta)</h2>
+        </div>
+        <div class="card-body">
+            <p class="text-light fs-5">Comienzos de año se lanza Sakura Secure Passwords con el proposito de ser un administrador de contraseñas que se maneja desde la web, facil y sencillo de utilizar, este primer lanzamiento trae:</p>
+            <br>
+            <ul class="updatesList fs-6">
+                <li>
+                    <a href="#update-1">Implementacion de cuentas:</a>
+                    <p>¡Registro e inicio de sesion!, ademas de requerimientos.</p>
+                </li>
+                <li>
+                    <a href="#1">¡Se agregaron las alertas!:</a>
+                    <p>Alertas de exito, advertencia y error para las distintas ocasiones.</p>
+                </li>
+                <li>
+                    <a href="#1">Seccion de contacto:</a>
+                    <p>Ya sea para informar errores o simplemente recomendar una mejora.</p>
+                </li>
+                <li>
+                    <a href="#1">Generador de contraseñas:</a>
+                    <p>Una herramienta muy util cuando se trata de elegir la mejor contraseña.</p>
+                </li>
+                <li>
+                    <a href="#1">Opciones de las cuentas:</a>
+                    <p>Operaciones basicas, añadir, editar, eliminar y descargar cuentas.</p>
+                </li>
+                <li>
+                    <a href="#1">Buscador de cuentas:</a>
+                    <p>Opcion dinamica para navegar por las cuentas si se tiene demasiadas.</p>
+                </li>
+                <li>
+                    <a href="#1">Datos encriptados:</a>
+                    <p>Tanto tu contraseña de usuario como tus cuentas van a estar cifradas de extremo a extremo.</p>
+                </li>
+            </ul>
+            <br>
+            <div class="card bg-dark" id="update-1">
+                <div class="card-header">
+                    <p class="text-light fs-4">Implementacion de cuentas</p>
+                </div>
+                <div class="card-body">
+                    <div class="updatesList">
+                        <p class="text-light fs-6">
+                            La implementacion de cuentas nos permite manejar los diferentes usuarios para que cada uno tenga sus cuentas bien protegidas y organizadas. Nos registramos e inicamos sesion con los requerimientos establecidos para la seguridad del usuario. Y ya podremos
+                            manejar las diferentes herramientas que nos proporciona Sakura Secure Passwords.
+                        </p>
+                        <br>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <br>
+                </div>
+            </div>
+            <br>
+            <div class="card bg-dark" id="update-1">
+                <div class="card-header">
+                    <h3 class="text-light fs-4">¡Se agregaron las alertas!</h3>
+                </div>
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <footer><a href="{{url_for('index')}}">Inicioo</a></footer>
+        </div>
+    </div>
+</div>
+</div>
+{%endblock%}

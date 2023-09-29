@@ -1,0 +1,47 @@
+{%extends "layaut.html"%}{%block content%} {%for x in range(7)%}
+<div class="divisor"></div>
+{%endfor%}
+<div class="banner">
+    <h1>
+        <div>Sakura</div>
+        <p>Secure Passwords</p>
+        <i class="fas fa-lock"></i>
+    </h1>
+    <p>La forma mas segura y sencilla de administrar tus contraseñas</p>
+    <div class="divisor"></div>
+    <div class="d-grid col-3">
+        <a href="{{url_for('signup')}}" class="btn btn-danger btn-lg"><i class="fas fa-lock"></i> ¡Empezar! <i class="fas fa-key"></i></a>
+    </div>
+</div>
+{%for x in range(13)%}
+<div class="divisor"></div>
+{%endfor%}
+<div class="columns">
+    <div class="card text-white bg-dark mb-6">
+        <div class="card-body">
+            <h5 class="card-title">¿Porque necesitas un administrador de contraseñas?</h5>
+            <p class="card-text">Actualmente es más que necesario mantener la seguridad y control ante herramientas que consumen hasta el 50% de nuestro día, herramientas que revolucionaron la vida de muchos, y así mismo herramientas que contienen datos importantes, una contraseña
+                o tres contraseñas para tus cuentas no siempre es seguro, pero claro no podemos memorizar más de 30 contraseñas diferentes y largas. Aquí es donde entramos nosotros, además de poder almacenar tus diferentes contraseñas para cada cuenta,
+                te aseguras de que tus contraseñas sean largas y seguras, indescifrables tanto para humanos como máquinas.
+            </p>
+        </div>
+    </div>
+    <div class="card text-white bg-dark mb-6">
+        <div class="card-body">
+            <h5 class="card-title">¿Que te ofrecemos?</h5>
+            <p class="card-text">
+                Una manera eficiente y segura administrar tus contraseñas. <i class="fas fa-check"></i>
+            </p>
+            <p class="card-text">
+                La posibilidad de descargar archivos con tu informacion en casos de emergencia. <i class="fas fa-check"></i>
+            </p>
+            <p class="card-text">
+                Todos tus datos ingresados van a ser encriptados y nadie tendra acceso a tu informacion. <i class="fas fa-check"></i>
+            </p>
+            <p class="card-text">
+                Un generador de contraseñas largas y seguras. <i class="fas fa-check"></i>
+            </p>
+        </div>
+    </div>
+</div>
+{%endblock%}

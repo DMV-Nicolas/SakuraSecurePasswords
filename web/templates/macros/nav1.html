@@ -1,0 +1,39 @@
+{% macro nav1() %}
+<header>
+    {%if not g.user%}
+    <!--Nav for no registered Users-->
+    <!--Horizontal nav-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="sidebar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{url_for('index')}}">Sakura SP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('index')}}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('generate')}}">Generador de contraseñas</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active end-item" href="{{url_for('signup')}}">Registrarme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active end-item" id="a" href="{{url_for('login')}}">Ingresar <i class="fas fa-sign-in-alt"></i></a>
+                    </li>
+                </ul>
+                <li class="nav-item">
+                    <a class="nav-link text-danger">Version 1.1 Beta</a>
+                </li>
+            </div>
+        </div>
+    </nav>
+    {%endif%}
+</header>
+{%endmacro%}

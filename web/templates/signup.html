@@ -1,0 +1,49 @@
+{%extends "layaut.html"%} {%block content%}
+<div class="sakura-form">
+    <form class="row g-3" action="{{url_for('signup')}}" method="POST">
+        <div class="mb-3">
+        </div>
+        <div class="col-12">
+            <h5 class="text-light text-center bg-dark" id="title-form">Registarme <i class="fas fa-user-plus"></i></h5>
+        </div>
+        <div class="col-12 shadow">
+            <label for="signupUsername" class="form-label text-light">Nombre de usuario</label>
+            <input type="text" class="form-control bg-dark text-light" id="signupUsername" placeholder="Username" value="{{data.username}}" name="signupUsername">
+            <div class="signupRequeriments">
+                <p>Mayor a 3 caracteres</p>
+            </div>
+        </div>
+        <div class="col-12 shadow">
+            <label for="signupEmail" class="form-label text-light">Correo electronico</label>
+            <input type="text" class="form-control bg-dark text-light" id="signupEmail" placeholder="Username@example.com" value="{{data.email}}" name="signupEmail">
+            <div class="signupRequeriments">
+                <p>Correo electronico valido</p>
+            </div>
+        </div>
+        <div class="col-12 shadow">
+            <label for="signupPassword" class="form-label text-light">Contraseña</label>
+            <input type="password" class="form-control bg-dark text-light" id="signupPassword" placeholder="************" value="{{data.password}}" name="signupPassword">
+            <div class="signupRequeriments">
+                <p>Mayor a 12 caracteres</p>
+                <p>Por lo menos 1 numero</p>
+                <p>Por lo menos 1 letra miniscula y mayuscula</p>
+            </div>
+        </div>
+        <div class="col-12 shadow">
+            <label for="signupConfirmpassword" class="form-label text-light">Confirmar contraseña</label>
+            <input type="password" class="form-control bg-dark text-light" id="signupConfirmpassword" placeholder="************" value="{{data.checkPassword}}" name="signupConfirmpassword">
+            <div class="signupRequeriments">
+                <p>Igual a contraseña</p>
+            </div>
+        </div>
+        <div class="mb-3">
+        </div>
+        <a href="{{url_for('login')}}" class="text-danger">¿Ya tienes una cuenta?</a>
+        <div class="d-grid gap-2 col-5 mx-auto">
+            <button class="btn btn-danger" type="submit" onclick="view()">Registarme</button>
+        </div>
+        <div class="mb-3">
+        </div>
+    </form>
+</div>
+{%endblock%}

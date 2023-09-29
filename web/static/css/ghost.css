@@ -1,0 +1,18 @@
+.ghost {
+    position: fixed;
+    z-index: 9999;
+    cursor: pointer;
+    top: 40%;
+    left: 45%;
+    animation: float 0.5s ease-out infinite;
+}
+
+.ghost:active {
+    animation: float 0.1s ease-out infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translate(0, 20px);
+    }
+}

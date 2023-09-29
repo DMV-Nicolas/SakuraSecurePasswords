@@ -1,0 +1,6 @@
+name = Discord A
+url = https://discord.com/login
+username = tokimimotakari19@gmail.com
+password = 83nicomoreno19
+account_id = 34
+user_id = 1
